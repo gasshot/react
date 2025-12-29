@@ -1,6 +1,6 @@
 import React from 'react'
 import BookInfo from './components/BookInfo'
-
+import products from "./products.json";
 
 function App() {
 
