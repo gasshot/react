@@ -1,0 +1,24 @@
+.bookRow {
+  display: flex;
+  align-items: center;   /* 세로 중앙 정렬 */
+  gap: 32px;             /* 덩어리 간 간격 */
+}
+.bookImg{
+    /* 사이즈 변경 */
+      width: 150px;
+  height: 220px;
+  object-fit: cover; /* 비율 유지하며 잘라냄 */
+}
+button#cart{
+    background-color: blueviolet;
+    margin-bottom: 10px;
+}
+button#cart :hover{
+    background-color: gray;
+    /* 폰트 색변경 */
+    margin-bottom: 10px;
+}
+.originPrice{
+      text-decoration: line-through;
+  color: #999;   /* 보통 흐리게 */
+}

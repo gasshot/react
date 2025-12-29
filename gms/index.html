@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to GMS</h1>
+
+    </header>
+
+    <main>
+      <section>
+        <h2>학적부</h2>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>학번</th>
+              <th>전공</th>
+              <th>이름</th>
+              <th>생년월일</th>
+            </tr>
+          </thead>
+          <tbody id="studentBody"></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>학점조회</h2>
+              <button onclick="lowerStudent()"><<</button>
+      <span id= "studentName">황백인</span>
+      <button onclick="higherStudent()">>></button>    
+
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>과목명</th>
+              <th>학점</th>
+              <th>성적</th>
+            </tr>
+          </thead>
+          <tbody id="scoreBody"></tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 GMS 학점조회시스템</p>
+    </footer>
+
+    <script src="./gms.js"></script>
+  </body>
+</html>
