@@ -7,16 +7,21 @@ function App() {
 
   return (
     <div>
-      <BookInfo
-        bookName={products[0].bookName}
-        authorName="스즈키 유이"
-        publisher="리프"
-        publishDate='2025.11.19'
-        discount={10}
-        bookPrice={17000}
-        description='저명한 괴테 연구가 도이치는 홍차 티백에서 출처 불명의 괴테 명언을 발견한다. “사랑은 모든 것을 혼동시키지 않고 혼연일체로 만든다.” 평생 괴테를 연구한 그조차 본 적 없는 낯선 문...'
+      <h1>온라인 일간 베스트</h1>
 
-      />
+      {products.map((product) => (
+        <BookInfo
+          key={product.id}
+          bookName={product.bookName}
+          authorName={product.authorName}
+          publisher={product.publisher}
+          publishDate={product.publishDate}
+          discount={product.discount}
+          bookPrice={product.bookPrice}
+          description={product.description}
+          imgSrc={product.imgSrc}
+        />      )
+      )}
     </div>
   )
 }

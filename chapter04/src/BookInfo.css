@@ -2,6 +2,25 @@
   display: flex;
   align-items: center;   /* 세로 중앙 정렬 */
   gap: 32px;             /* 덩어리 간 간격 */
+  margin-left: 50px;
+  margin-bottom: 20px;   /* 아래 여백 */
+}
+.infoBody{
+  width: 1200px;
+}
+.deliveryInfo{
+    width: 200px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.bookName{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.discount{
+    color: green;
+    font-weight: bold;
 }
 .bookImg{
     /* 사이즈 변경 */
@@ -9,15 +28,30 @@
   height: 220px;
   object-fit: cover; /* 비율 유지하며 잘라냄 */
 }
+
+.buttonGroup{
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */ 
+    gap: 10px; /* 버튼 간 간격 */
+}
 button#cart{
     background-color: blueviolet;
-    margin-bottom: 10px;
 }
-button#cart :hover{
-    background-color: gray;
+button#cart:hover{
+    background-color: rgb(128, 13, 235);
+    color: white;
     /* 폰트 색변경 */
-    margin-bottom: 10px;
 }
+button#purchase{
+    background-color: rgb(60, 46, 255);
+}
+button#purchase:hover{
+    background-color: rgb(37, 22, 255);
+    color: white;
+    /* 폰트 색변경 */
+}
+
+
 .originPrice{
       text-decoration: line-through;
   color: #999;   /* 보통 흐리게 */
