@@ -1,2 +1,18 @@
-/입문부터 배포까지 리액트로 완성하는 프론트엔드 실무_3차_강인오
-/입문부터 배포까지 리액트로 완성하는 프론트엔드 실무_3차_강인오.zip
+# dependencies
+node_modules/
+
+# build 결과물
+dist/
+build/
+
+# 환경 변수
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
