@@ -5,20 +5,29 @@ import styles from './Home.module.css'
 import useFetchProducts from '../../hooks/useFetchProducts';
 
 const Home = () => {
-  const { products } = useFetchProducts();
+  const { products, isProductsLoading, isProductsError } = useFetchProducts();
   const [selectedCategory, setSelectedCategory] = useState("전체");
 
-  const filteredProducts = products.filter((category)=>{
-    if(selectedCategory ==="전체"){
+  const filteredProducts = products.filter(({category}) => {
+    if (selectedCategory === "전체") {
       return true;
     }
     return selectedCategory === category;
-  })
+  });
+
+  if (isProductsLoading) {
+    return (<div>상품을 로딩중입니다...</div>)
+  }
+
+  if (isProductsError) {
+    return (<div>상품 목록을 가져오는 중 오류가 발생하였습니다.</div>)
+  }
 
   return (
     <>
       <ul className={styles.categoryList}>
-        {["전체", "상의", "하의", "신발", "악세서리"].map((category) => {
+        {["전체", "상의", "하의", "신발", "가방", "악세서리"].map(
+          (category) => {
           return <li key={category} className={
             selectedCategory === category ? styles.selected : null}
             onClick={() => {
@@ -29,7 +38,7 @@ const Home = () => {
         })}
       </ul>
 
-      <h3>상품 목록({products.length})</h3>
+      <h3>상품 목록({filteredProducts.length})</h3>
       <div className={styles.productList}>
         {filteredProducts.map(({ id, category, image, name, price }) => {
 
