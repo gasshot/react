@@ -5,13 +5,13 @@ function useFetchProduct(productId) {
   const [isProductLoading, setIsProductLoading] = useState(true);
   const [isProductError, setIsProductError] = useState(false);
 
-  console.log(productId);
+  //console.log(productId);
 
   useEffect(() => {
     async function fetchProduct() {
       try {
         setIsProductLoading(true);
-        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        const response = await fetch(`http://localhost:3000/products/${productId}?_embed=reviews`);
 
         if(!response.ok){
             throw new Error("");

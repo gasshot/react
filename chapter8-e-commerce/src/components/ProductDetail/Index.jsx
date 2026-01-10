@@ -7,7 +7,7 @@ import styles from './ProductDetail.module.css'
 const ProductDetail = () => {
     const { productId } = useParams();
     const { product, isProductLoading, isProductError } = useFetchProduct(productId);
-    const { reviews, isReviewsLoading, isReviewsError } = useFetchReviews(productId);
+    //const { reviews, isReviewsLoading, isReviewsError } = useFetchReviews(productId);
 
     if (isProductLoading) {
         return (<div>
@@ -20,6 +20,9 @@ const ProductDetail = () => {
             상품 정보를 불러오는데 실패했습니다...
         </div>)
     }
+
+
+
 
     return (
         <div>
@@ -35,16 +38,26 @@ const ProductDetail = () => {
             </div>
             <hr />
             <p className={styles.productDesc}>{product.description}</p>
-            <h3>리뷰({reviews.length})</h3>
+            <h3>리뷰({product.reviews.length})</h3>
             <hr />
-            <div className={styles.reviewItem}>
-                <div className={styles.reviewHeader}>
-                    <div>Alice</div>
-                    <div>(4/5)</div>
-                </div>
+            {product.reviews.length > 0 ? (
+                product.reviews.map((review) => {
+                    //console.log(review);
+                    return (
 
-                <div className={styles.text}>너무 잘 사용하고 있습니다. 최고로 좋은 제품이에요. 다들 꼭 사세요~</div>
-            </div>
+                        <div key={review.id} className={styles.reviewItem}>
+                            <div className={styles.reviewHeader}>
+                                <div>{review.username}</div>
+                                <div>({review.rating}/5)</div>
+                            </div>
+
+                            <div className={styles.text}>{review.text}</div>
+                        </div>
+                    );
+                })
+            ) : <div className={styles.emptyReview}>아직 작성된 리뷰가 없습니다.</div>}
+
+
         </div>
 
     )

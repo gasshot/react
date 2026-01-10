@@ -5,7 +5,7 @@ function useFetchReviews(productId) {
   const [isReviewsLoading, setIsReviewsLoading] = useState(true);
   const [isReviewsError, setIsReviewsError] = useState(false);
 
-  console.log(productId);
+  //console.log(productId);
 
   useEffect(() => {
     async function fetchReviews() {
@@ -19,7 +19,7 @@ function useFetchReviews(productId) {
 
         const json = await response.json();
         
-        console.log(json);
+        //console.log(json);
 
         setReviews(json);
         setIsReviewsLoading(false);
